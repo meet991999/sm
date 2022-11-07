@@ -67,7 +67,7 @@ async function loadPage3() {
     document.getElementById("title").className = "title-3"
     //document.getElementById("choose-button").className = "choose-button-3"
 
-    setTimeout(() => {  document.getElementById("title").innerHTML = "Please Choose Where you Want to Save the File" }, 1000);
+    setTimeout(() => {  document.getElementById("title").innerHTML = "Please Enter Your Name" }, 1000);
 }
 
 async function chooseFolder() {
