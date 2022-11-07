@@ -34,7 +34,8 @@ def getURLs(urls):
 
 @app.route("/download")
 def download():
-    path = 'D:/Meet/scraper-master/web/html/files/2022-11-04/a.docx'
+    directory_date_folder = str(date.today())
+    path = "D:/Meet/scraper-master/web/html/files/"+directory_date_folder+"/a.docx"
     return send_file(path, as_attachment=True)
 
 
@@ -99,31 +100,37 @@ def saveFile():
     """
     Save the doc
     """
-
+    global directory_list
 
     directory_date_folder = str(date.today())
     print(directory_date_folder)
     parent_dir_for_date = "D:/Meet/scraper-master/web/html/files/"
     path_new_date = os.path.join(parent_dir_for_date, directory_date_folder)
 
+    #
+    # for i in os.listdir(parent_dir_for_date):
+    #     if f"{i}"==directory_date_folder:
+    if directory_date_folder in os.listdir(parent_dir_for_date):
 
-    for i in os.listdir(parent_dir_for_date):
-        if i==directory_date_folder:
+        inputJson = request.get_json(force=True)  # Get JSON from user
+        PATH = inputJson["text"]  # Get the path
+        directory_list = os.listdir("D:/Meet/scraper-master/web/html/files/"+directory_date_folder)
+        if "a.docx" in directory_list:
+            os.remove("D:/Meet/scraper-master/web/html/files/"+directory_date_folder+"/a.docx")
+        doc.save("D:/Meet/scraper-master/web/html/files/"+directory_date_folder+"/a.docx")
+        return inputJson
 
-            inputJson = request.get_json(force=True)  # Get JSON from user
-            PATH = inputJson["text"]  # Get the path
-            doc.save("D:/Meet/scraper-master/web/html/files/"+directory_date_folder+"/"+str(PATH))
-            return inputJson
 
+    else:
+        os.mkdir(path_new_date)
+        inputJson = request.get_json(force=True)  # Get JSON from user
+        PATH = inputJson["text"]  # Get the path
+        directory_list = os.listdir("D:/Meet/scraper-master/web/html/files/" + directory_date_folder)
+        if "a.docx" in directory_list:
+            os.remove("D:/Meet/scraper-master/web/html/files/"+directory_date_folder+"/a.docx")
+        doc.save("D:/Meet/scraper-master/web/html/files/"+directory_date_folder+"/a.docx")
 
-        else:
-            os.mkdir(path_new_date)
-            inputJson = request.get_json(force=True)  # Get JSON from user
-            PATH = inputJson["text"]  # Get the path
-
-            doc.save("D:/Meet/scraper-master/web/html/files/"+directory_date_folder+"/"+str(PATH))
-
-            return inputJson
+        return inputJson
 
 
 
