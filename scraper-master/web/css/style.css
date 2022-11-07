@@ -1,0 +1,103 @@
+.main-body {
+  width:600px;
+  height: 550px;
+  padding: 60px 35px 35px 35px;
+  border-radius: 40px;
+  background: #ecf0f3;
+  box-shadow: 13px 13px 20px #cbced1,
+              -13px -13px 20px #ffffff;
+
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+}
+
+.title {
+  text-align: center;
+  font-size: 45px;
+  padding-top: 0px;
+  letter-spacing: 0.5px;
+  font-family: 'Noto Sans', sans-serif;
+  color: gray;
+}
+
+.url-area {
+  margin-bottom: 30px;
+  border-radius: 10px;
+
+  outline: none;
+  border:none;
+
+  float: left;
+  box-shadow: inset 8px 8px 8px #cbced1,
+              inset -8px -8px 8px #ffffff;;
+
+  width: 75%;
+  height: 50%;
+  position: absolute;
+  top: 27%;
+  left: 12%;
+}
+
+.submit-button {
+  outline: none;
+  border:none;
+  cursor: pointer;
+  width: 90%;
+  height: 60px;
+  border-radius: 30px;
+  font-size: 20px;
+  font-weight: 700;
+  font-family: 'Noto Sans', sans-serif;
+  color:#fff;
+  text-align: center;
+  background: #ea5151;
+  box-shadow: 3px 3px 8px #b1b1b1,
+              -3px -3px 8px #ffffff;
+  transition: 0.5s;
+
+  position: absolute;
+  top: 85%;
+}
+
+.loading {
+  outline: none;
+  border:none;
+  cursor: pointer;
+  width: 90%;
+  height: 60px;
+  border-radius: 30px;
+  font-size: 20px;
+  font-weight: 700;
+  font-family: 'Noto Sans', sans-serif;
+  color:#fff;
+  text-align: center;
+  background: #ea5151;
+  box-shadow: 3px 3px 8px #b1b1b1,
+              -3px -3px 8px #ffffff;
+  transition: 0.5s;
+
+  position: absolute;
+  top: 85%;
+
+  opacity: 0;
+}
+
+.user-input {
+
+  margin-bottom: 30px;
+  border-radius: 25px;
+  position: absolute;
+  box-shadow: inset 8px 8px 8px #cbced1,
+              inset -8px -8px 8px #ffffff;;
+
+  width: 0%;
+  visibility: hidden;
+}
+
+.choose-button {
+  opacity: 0;
+}

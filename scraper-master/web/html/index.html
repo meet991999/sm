@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+
+<header>
+
+    <title>Word thing</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/page2.css">
+    <link rel="stylesheet" href="../css/page3.css">
+</header>
+
+<body>
+    <div class="main-body" id="main-body">
+
+        <h1 class="title" id="title">Content Doc Auto Filler</h1>
+
+        <div class="fields">
+            <textarea class="url-area" id="url-area" placeholder="To use, paste the urls you want content for in this box seperated by a newline and hit submit..."></textarea>
+            <input type='text' class='user-input' placeholder='Please paste the path you want the file to be saved at (path/path/filename.docx)...' id='path-input' autofocus>
+        </div>
+
+        <div class="loading" id="loading"></div>
+        <button class='submit-button' id='submit-button' onclick="submitURL()">Submit</button>
+        <button class='choose-button' id='choose-button' onclick="chooseFolder()">Choose Folder</button>
+    </div>
+    <a href="http://127.0.0.1:5000/download">download</a>
+    <script src="../javascript/index.js"></script>
+</body>
